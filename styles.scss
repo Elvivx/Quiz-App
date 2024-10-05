@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+main{
+    width: 100vw !important;
+    height: 100vh !important;
+    background : linear-gradient( to right bottom, rgb(80, 212, 139), rgb(0, 255, 255));
+    display: grid;
+    place-items: center;
+    .title{
+        background: linear-gradient(to right, #732ebd, #c698fa );
+        background-clip: text;
+        color: transparent;
+        display: block;
+        font-size: 80px;
+        font-weight: 800;
+        text-align: center;
+        // text-shadow: 1px 5px -4px  red;
+    }
+    .quizz-container{
+        width: 800px;
+        height: 500px;
+        background: whitesmoke;
+        border-radius: 10px;
+        display: flex;
+        background: #cbf4ed;
+        overflow: hidden;
+        position: relative;
+        &:nth-child(1){
+            border: 1px solid yellow;
+
+        }
+        .quiz{
+            display: flex;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            .questions{
+                color: azure;
+                padding: 20px;
+                width: 100%;
+                text-align: center;
+                background: #009d82;
+                h2{
+                    background: linear-gradient(to right, #d7baf7, #c592ff );
+                    background-clip: text;
+                    color: transparent;
+                    display: inline-block;
+                    font-size: 50px;
+                    font-weight: 800;
+                    margin: 0;
+                }
+                .question{
+                    // ejector
+                }
+            }
+            .answers{
+                width: 100%;
+                padding: 10px;
+                height: 500px;
+                margin: auto ;
+                overflow-y: scroll;
+                scrollbar-width: none;
+
+                .answers-options{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+    
+                    .btn{
+                        background: #74dde2;
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        border-radius: 20px;
+                        border: 2px solid transparent;
+                        font-size: 17px;
+                       
+                        input{
+                            width: 20px;
+                            height: 20px ;
+                            accent-color: #009d82;
+                            z-index: 1;
+                        }
+                        label{
+                            margin: auto;
+                            width: 100%;
+                            height: 100%;
+                            padding: 10px 0;
+                            z-index: 2;
+                        }
+                        &:hover{
+                            border: 2px solid #c592ff;
+                        }
+                    }
+                    .sel{
+                        border: 2px solid #c592ff;
+                    }
+                }
+                .nav{                
+                    margin-top: 20%;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    button{
+                        padding: 10px 30px ;
+                        border: 1px solid #009d82;
+                        border-radius: 5px;
+                        color: #009d82;
+                        background: whitesmoke;
+    
+                        &:hover{
+                            background: #009d82;
+                            color: #d3f6ec;
+                        }
+                    }
+                }
+            }
+        }
+        .hide{
+            display: none;
+        }
+        .correct{
+            color: rgb(31, 195, 31) !important;
+            font-size: 21px !important;
+            font-weight: 800
+        }
+        .wrong{
+            color: red !important;
+        }
+    }
+    @media (max-width: 600px) {
+        .quizz-container{
+            width: 100dvw;
+            height: 700px;
+            .quiz{
+                flex-direction: column;
+            }
+        }
+    }
+
+}
